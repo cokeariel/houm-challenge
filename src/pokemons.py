@@ -1,22 +1,14 @@
 import requests
-
-base_url = 'https://pokeapi.co/api/v2'
-limit_pokemons = 1126
-
-def check_name (pokemon):
-  name = pokemon['name']
-  if 'at'in name and name.count('a') == 2:
-    return True
-  else:
-    return False
+import src.utils as utils
+import src.config as env
 
 def get_count_ata_pokemons () -> int:
   try: 
-    response = requests.get(f'{base_url}/pokemon?limit={limit_pokemons}')
+    response = requests.get(f'{env.API_BASE_URL}/pokemon?limit={env.LIMIT_POKEMONS}')
     
     pokemons = response.json()['results']
 
-    pokemons_filtered = list(filter(check_name, pokemons))
+    pokemons_filtered = list(filter(utils.check_name, pokemons))
 
     return len(pokemons_filtered)
     
