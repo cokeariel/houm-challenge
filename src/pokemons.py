@@ -4,6 +4,10 @@ import src.config as env
 from typing import List
 
 def get_count_ata_pokemons () -> int:
+  """
+  Obtains the number of Pokemons with "at" and another "a"
+  -> return: a number, equivalent a number of Pokemons with "at" and another "a"
+  """
   try:
     response = requests.get(f'{env.API_BASE_URL}/pokemon?limit={env.LIMIT_POKEMONS}')
 
@@ -17,6 +21,11 @@ def get_count_ata_pokemons () -> int:
     raise SystemExit(err)
 
 def get_pokemon_procreators_amount (pokemonName: str) -> int:
+  """
+  Obtains the number of Pokemons to can procreate
+  -> Param name: the namo ok a Pokemon, it must be typeof string
+  -> return: a number, equivalent a number of Pokemons to can procreate
+  """
   try:
     response = requests.get(f'{env.API_BASE_URL}/pokemon-species/{pokemonName}')
 
@@ -37,18 +46,17 @@ def get_pokemon_procreators_amount (pokemonName: str) -> int:
     raise SystemExit(err)
 
 def get_weights_by_pokemon_type (pokemonType: str) -> List[int]:
+  """
+  Obtains according to Pokemon type, the maximum and minimum weight
+  -> Param pokemonType: the pokemon type, it must be typeof string
+  -> return: a list of [max_weight: int, min_weight: int]
+  """
   try:
-    response = requests.get(f'{env.API_BASE_URL}/type/{pokemonType}')
-    pokemonsType = response.json()['pokemon']
+    pokemons = utils.check_pokemon_type_generation(pokemonType, env.LIMIT_ID_FIRST_GENERATION)
 
     max_weight = 0
     min_weight = 99999999
-    for pokemonType in pokemonsType:
-      response = requests.get(pokemonType['pokemon']['url'])
-      pokemon = response.json()
-
-      if pokemon['id'] > env.LIMIT_ID_FIRST_GENERATION: continue
-
+    for pokemon in pokemons:
       if pokemon['weight'] > max_weight:
         max_weight = pokemon['weight']
 
