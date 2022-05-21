@@ -15,23 +15,23 @@ Codigo probado en Python 3.9.12
 
 Previo a ejecución, se necesita clonar repositorio e instalar requirements.txt 
 ```
-git clone
+git clone https://github.com/cokeariel/houm-challenge.git
 pip3 install -r requirements.txt
 ```
 
 ## Ejecución
-Generar Respuesta a preguntas 1, 2 y 3
+Generar Respuesta a preguntas 1, 2 y 3... 
 Ejecutar:
 ```
 python3 main.py
 ```
 
-Generar Test
+Generar Test... 
 Ejecutar:
 ```
 pytest test_main.py -v
 ```
-o
+ó...
 Ejecutar:
 ```
 python3 -m pytest test_main.py -v
