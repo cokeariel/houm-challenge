@@ -1,5 +1,7 @@
 # Folder when executed pytest test_main.py
 __pycache__/
+*.py[cod]
+*$py.class
 
 # Folder when finish of compiled pytest test_main.py
 .pytest_cache/
