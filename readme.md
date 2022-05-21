@@ -29,10 +29,10 @@ python3 main.py
 Generar Test
 Ejecutar:
 ```
-pytest -v
+pytest test_main.py -v
 ```
 o
 Ejecutar:
 ```
-pytest test_main.py -v
+python3 -m pytest test_main.py -v
 ```
