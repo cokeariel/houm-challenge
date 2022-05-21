@@ -1,0 +1,8 @@
+# Folder when executed pytest test_main.py
+__pycache__/
+
+# Folder when finish of compiled pytest test_main.py
+.pytest_cache/
+
+# Folder when compiled
+src/__pycache__/

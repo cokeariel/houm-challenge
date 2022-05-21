@@ -20,14 +20,14 @@ def get_count_ata_pokemons () -> int:
   except requests.exceptions.RequestException as err:
     raise SystemExit(err)
 
-def get_pokemon_procreators_amount (pokemonName: str) -> int:
+def get_pokemon_procreators_amount (pokemon_name: str) -> int:
   """
   Obtains the number of Pokemons to can procreate
-  -> Param name: the namo ok a Pokemon, it must be typeof string
+  -> param name: the name of a Pokemon, it must be typeof string
   -> return: a number, equivalent a number of Pokemons to can procreate
   """
   try:
-    response = requests.get(f'{env.API_BASE_URL}/pokemon-species/{pokemonName}')
+    response = requests.get(f'{env.API_BASE_URL}/pokemon-species/{pokemon_name}')
 
     specie = response.json()
 
@@ -45,14 +45,14 @@ def get_pokemon_procreators_amount (pokemonName: str) -> int:
   except requests.exceptions.RequestException as err:
     raise SystemExit(err)
 
-def get_weights_by_pokemon_type (pokemonType: str) -> List[int]:
+def get_weights_by_pokemon_type (pokemon_type: str) -> List[int]:
   """
   Obtains according to Pokemon type, the maximum and minimum weight
-  -> Param pokemonType: the pokemon type, it must be typeof string
+  -> param pokemon_type: the pokemon type, it must be typeof string
   -> return: a list of [max_weight: int, min_weight: int]
   """
   try:
-    pokemons = utils.check_pokemon_type_generation(pokemonType, env.LIMIT_ID_FIRST_GENERATION)
+    pokemons = utils.check_pokemon_type_generation(pokemon_type, env.LIMIT_ID_FIRST_GENERATION)
 
     max_weight = 0
     min_weight = 99999999

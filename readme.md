@@ -8,26 +8,29 @@
 
 3.- Entrega el máximo y mínimo peso de los pokémon de tipo fighting de primera generación (cuyo id sea menor o igual a 151). Tu respuesta debe ser una lista con el siguiente formato: [1234, 12], en donde 1234 corresponde al máximo peso y 12 al mínimo.
 
-
 ## Instalación
 
-Codigo probado en Python 3.9.12
+> Programa ejecutado en Python ^3.9.12
 
-Previo a ejecución, se necesita clonar repositorio e instalar requirements.txt 
+Clonar repositorio:
 ```
 git clone https://github.com/cokeariel/houm-challenge.git
+```
+Para la instalación de las dependencias, ejecturar el siguiente comando:
+```
 pip3 install -r requirements.txt
 ```
 
-## Ejecución
-Para generar Respuesta a preguntas 1, 2 y 3... 
-Ejecutar:
+## Ejecución 
+
+Para obtener las respuestas a las preguntas 1,2 y 3 del desafío, ejecutar el siguiente comando:
 ```
-python3 main.py
+python main.py
 ```
 
-Para generar Test... 
-Ejecutar:
+## Testing
+
+Para ejecutar los test de este programa, ejecutar el siguiente comando:
 ```
-python3 -m pytest test_main.py -v
+python -m pytest test_main.py -v
 ```
