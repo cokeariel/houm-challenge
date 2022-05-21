@@ -20,18 +20,13 @@ pip3 install -r requirements.txt
 ```
 
 ## Ejecución
-Generar Respuesta a preguntas 1, 2 y 3... 
+Para generar Respuesta a preguntas 1, 2 y 3... 
 Ejecutar:
 ```
 python3 main.py
 ```
 
-Generar Test... 
-Ejecutar:
-```
-pytest test_main.py -v
-```
-ó...
+Para generar Test... 
 Ejecutar:
 ```
 python3 -m pytest test_main.py -v
