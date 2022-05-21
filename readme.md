@@ -15,5 +15,7 @@ python3 main.py
 
 Generar Test
 ```
-python3 test-unittest.py
+pytest -v
+or
+pytest test_main.py -v
 ```
