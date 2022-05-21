@@ -8,14 +8,31 @@
 
 3.- Entrega el máximo y mínimo peso de los pokémon de tipo fighting de primera generación (cuyo id sea menor o igual a 151). Tu respuesta debe ser una lista con el siguiente formato: [1234, 12], en donde 1234 corresponde al máximo peso y 12 al mínimo.
 
-Generar Respuesta
+
+## Instalación
+
+Codigo probado en Python 3.9.12
+
+Previo a ejecución, se necesita clonar repositorio e instalar requirements.txt 
+```
+git clone
+pip3 install -r requirements.txt
+```
+
+## Ejecución
+Generar Respuesta a preguntas 1, 2 y 3
+Ejecutar:
 ```
 python3 main.py
 ```
 
 Generar Test
+Ejecutar:
 ```
 pytest -v
-or
+```
+o
+Ejecutar:
+```
 pytest test_main.py -v
 ```
